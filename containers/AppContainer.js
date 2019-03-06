@@ -2,13 +2,20 @@ import React, { Component } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'; 
+import Title from '../components/Title';
+import Footer from '../components/Footer'; 
+import List from '../components/List'; 
+import Input from '../components/Input'; 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+  },
+  topContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
   },
 })
 
@@ -26,7 +33,11 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>It's working</Text>
+        <View style={styles.topContainer}>
+          <Title />
+          <Input />
+        </View>
+        <Footer/>
       </View>
     )
   }
