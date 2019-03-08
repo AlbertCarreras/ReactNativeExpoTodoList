@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet, ScrollView } from 'react-native'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'; 
 import Title from '../components/Title';
@@ -33,10 +33,11 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.topContainer}>
+        <ScrollView contentContainerStyle={styles.topContainer}>
           <Title />
           <Input />
-        </View>
+          <List />
+        </ScrollView>
         <Footer/>
       </View>
     )
